@@ -13,6 +13,10 @@ defmodule PeladatorWeb.ConnCase do
   of the test unless the test case is marked as async.
   """
 
+  alias Ecto.Adapters.SQL.Sandbox
+  alias Peladator.Repo
+  alias Phoenix.ConnTest
+
   use ExUnit.CaseTemplate
 
   using do
@@ -26,13 +30,12 @@ defmodule PeladatorWeb.ConnCase do
     end
   end
 
-
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Peladator.Repo)
+    :ok = Sandbox.checkout(Repo)
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Peladator.Repo, {:shared, self()})
+      Sandbox.mode(Repo, {:shared, self()})
     end
-    {:ok, conn: Phoenix.ConnTest.build_conn()}
+    {:ok, conn: ConnTest.build_conn()}
   end
 
 end

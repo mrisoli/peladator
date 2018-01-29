@@ -1,5 +1,10 @@
 defmodule PeladatorWeb.Application do
+  @moduledoc """
+  application entry point
+  """
   use Application
+
+  alias PeladatorWeb.Endpoint
 
   def start(_type, _args) do
     import Supervisor.Spec
@@ -8,7 +13,8 @@ defmodule PeladatorWeb.Application do
     children = [
       # Start the endpoint when the application starts
       supervisor(PeladatorWeb.Endpoint, []),
-      # Start your own worker by calling: PeladatorWeb.Worker.start_link(arg1, arg2, arg3)
+      # Start your own worker by calling:
+      # PeladatorWeb.Worker.start_link(arg1, arg2, arg3)
       # worker(PeladatorWeb.Worker, [arg1, arg2, arg3]),
     ]
 
@@ -21,7 +27,7 @@ defmodule PeladatorWeb.Application do
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    PeladatorWeb.Endpoint.config_change(changed, removed)
+    Endpoint.config_change(changed, removed)
     :ok
   end
 end

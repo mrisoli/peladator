@@ -22,6 +22,8 @@ defmodule Peladator.Umbrella.Mixfile do
   # Dependencies listed here are available only for this project
   # and cannot be accessed from applications inside the apps folder
   defp deps do
-    []
+    [
+      {:credo, "~> 0.9.0-rc1", only: [:dev, :test], runtime: false}
+    ]
   end
 end
