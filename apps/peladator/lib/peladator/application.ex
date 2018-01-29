@@ -12,8 +12,12 @@ defmodule Peladator.Application do
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
 
-    Supervisor.start_link([
-      supervisor(Peladator.Repo, []),
-    ], strategy: :one_for_one, name: Peladator.Supervisor)
+    Supervisor.start_link(
+      [
+        supervisor(Peladator.Repo, [])
+      ],
+      strategy: :one_for_one,
+      name: Peladator.Supervisor
+    )
   end
 end
