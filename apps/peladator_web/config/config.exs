@@ -14,9 +14,7 @@ config :peladator_web,
 config :peladator_web, PeladatorWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "gTCGYsDzpFButL7PzhWMH8i0hLt6HzPtXjSbzDsBI6sy4kQqWVzLmC8/TkDfF4km",
-  render_errors: [view: PeladatorWeb.ErrorView, accepts: ~w(json)],
-  pubsub: [name: PeladatorWeb.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+  render_errors: [view: PeladatorWeb.ErrorView, accepts: ~w(json)]
 
 # Configures Elixir's Logger
 config :logger, :console,

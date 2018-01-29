@@ -22,7 +22,6 @@ defmodule PeladatorWeb do
       use Phoenix.Controller, namespace: PeladatorWeb
       import Plug.Conn
       import PeladatorWeb.Router.Helpers
-      import PeladatorWeb.Gettext
     end
   end
 
@@ -35,8 +34,6 @@ defmodule PeladatorWeb do
       import Phoenix.Controller, only: [get_flash: 2, view_module: 1]
 
       import PeladatorWeb.Router.Helpers
-      import PeladatorWeb.ErrorHelpers
-      import PeladatorWeb.Gettext
     end
   end
 
@@ -51,7 +48,6 @@ defmodule PeladatorWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import PeladatorWeb.Gettext
     end
   end
 
