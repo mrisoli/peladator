@@ -27,7 +27,8 @@ defmodule Peladator.Umbrella.Mixfile do
     [
       {:credo, "~> 0.9.0-rc1", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 0.5", only: [:dev], runtime: false},
-      {:excoveralls, "~> 0.8", only: :test}
+      {:excoveralls, "~> 0.8", only: :test},
+      {:quick_alias, "~> 0.1.0"}
     ]
   end
 end
