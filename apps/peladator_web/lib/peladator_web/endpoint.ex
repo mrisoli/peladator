@@ -20,7 +20,7 @@ defmodule PeladatorWeb.Endpoint do
   plug(Plug.MethodOverride)
   plug(Plug.Head)
 
-  plug(PeladatorWeb.Router)
+  plug(Absinthe.Plug, schema: Peladator.Web.Schema)
 
   @doc """
   Callback invoked for dynamically configuring the endpoint.
