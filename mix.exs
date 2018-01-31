@@ -6,6 +6,7 @@ defmodule Peladator.Umbrella.Mixfile do
       apps_path: "apps",
       start_permanent: Mix.env() == :prod,
       test_coverage: [tool: ExCoveralls],
+      dialyzer: [plt_add_deps: :transitive],
       deps: deps()
     ]
   end
@@ -25,6 +26,7 @@ defmodule Peladator.Umbrella.Mixfile do
   defp deps do
     [
       {:credo, "~> 0.9.0-rc1", only: [:dev, :test], runtime: false},
+      {:dialyxir, "~> 0.5", only: [:dev], runtime: false},
       {:excoveralls, "~> 0.8", only: :test}
     ]
   end
