@@ -24,7 +24,7 @@ defmodule Peladator.Mixfile do
   def application do
     [
       mod: {Peladator.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :ex_machina]
     ]
   end
 
@@ -37,8 +37,9 @@ defmodule Peladator.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:ex_machina, "~> 2.1"},
       {:postgrex, ">= 0.0.0"},
-      {:ecto, "~> 2.1"}
+      {:ecto, "~> 2.1", only: :test}
     ]
   end
 
